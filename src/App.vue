@@ -1,7 +1,7 @@
 <script setup></script>
 
 <template>
-  <header>Лого</header>
+  <header>лого</header>
   <main>Привет!</main>
   <footer>Футер</footer>
 </template>
