@@ -4,7 +4,7 @@ const id = "blue";
 </script>
 
 <template>
-  <header :class="`color-${id}`">Лого</header>
+  <header>Лого</header>
   <Button />
   <main :id>Контент</main>
 </template>
