@@ -1,7 +1,9 @@
 <script setup></script>
 
 <template>
-  <button class="button">Кнопка</button>
+  <button class="button">
+    <slot></slot>
+  </button>
 </template>
 
 <style scoped>
