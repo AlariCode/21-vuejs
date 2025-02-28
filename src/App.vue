@@ -1,18 +1,11 @@
-<!-- <script setup>
+<script setup>
+import Button from "./components/Button.vue";
 const id = "blue";
-</script> -->
-<script>
-export default {
-  data() {
-    return {
-      id: "blue",
-    };
-  },
-};
 </script>
 
 <template>
   <header :class="`color-${id}`">Лого</header>
+  <Button />
   <main :id>Контент</main>
 </template>
 
