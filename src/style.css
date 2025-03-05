@@ -17,4 +17,8 @@ body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	background-color: var(--color-bg);
+
+	display: grid;
+	place-items: center;
+	min-height: 100vh;
 }
