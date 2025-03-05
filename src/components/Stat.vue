@@ -1,9 +1,14 @@
-<script setup></script>
+<script setup>
+const { label = "Не задан", stat } = defineProps({
+  label: String,
+  stat: String,
+});
+</script>
 
 <template>
   <div class="stat">
-    <div class="stat-name">Влажность</div>
-    <div class="stat-value">90%</div>
+    <div class="stat-name">{{ label }}</div>
+    <div class="stat-value">{{ stat }}</div>
   </div>
 </template>
 
