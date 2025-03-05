@@ -1,9 +1,11 @@
 <script setup>
 import Button from "./components/Button.vue";
+import Stat from "./components/Stat.vue";
 </script>
 
 <template>
   <main class="main">
+    <Stat />
     <Button>Сохранить</Button>
   </main>
 </template>

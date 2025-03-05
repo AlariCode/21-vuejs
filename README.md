@@ -1,8 +1,8 @@
 # Компоненты
 
 - Кнопка
+- Stat
 
-* Stat
 * Input
 * DayCard
 * ListDays
