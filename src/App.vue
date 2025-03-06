@@ -1,5 +1,6 @@
 <script setup>
 import Button from "./components/Button.vue";
+import IconLocation from "./icons/IconLocation.vue";
 import Stat from "./components/Stat.vue";
 const data = {
   label: "Влажность",
@@ -11,7 +12,10 @@ const data = {
   <main class="main">
     <Stat v-bind="data" />
     <Stat label="Осадки" stat="0%" />
-    <Button>Сохранить</Button>
+    <Button>
+      <IconLocation />
+      Сохранить
+    </Button>
   </main>
 </template>
 
