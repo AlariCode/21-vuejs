@@ -5,13 +5,17 @@ const data = {
   label: "Влажность",
   stat: "90%",
 };
+
+function getCity(city) {
+  console.log(city);
+}
 </script>
 
 <template>
   <main class="main">
     <Stat v-bind="data" />
     <Stat label="Осадки" stat="0%" />
-    <CitySelect />
+    <CitySelect @select-city="getCity" />
   </main>
 </template>
 
