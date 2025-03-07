@@ -2,10 +2,14 @@
 import IconLocation from "../icons/IconLocation.vue";
 import Button from "./Button.vue";
 
-const emit = defineEmits(["select-city"]);
+const emit = defineEmits({
+  selectCity(payload) {
+    return payload;
+  },
+});
 
 function select() {
-  emit("select-city", "London");
+  emit("selectCity", "London");
 }
 </script>
 
