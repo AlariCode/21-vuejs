@@ -1,21 +1,17 @@
 <script setup>
-import { ref } from "vue";
+import { reactive, ref } from "vue";
 import CitySelect from "./components/CitySelect.vue";
 import Stat from "./components/Stat.vue";
 
 let savedCity = ref("Moscow");
-let data = ref({
+let data = reactive({
   label: "Влажность",
   stat: "90%",
 });
-let arr = ref([1]);
-let map = ref(new Map([["1", 1]]));
 
 function getCity(city) {
   savedCity.value = city;
-  data.value.stat = "20%";
-  arr.value.push(2);
-  map.value.set("2", 2);
+  data.stat = "20%";
 }
 </script>
 
