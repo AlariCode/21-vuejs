@@ -23,7 +23,6 @@ async function getCity(city) {
 
 <template>
   <main class="main">
-    {{ date }}
     <div id="city">{{ savedCity }}</div>
     <Stat v-bind="dataModified" />
     <Stat label="Осадки" stat="0%" />
