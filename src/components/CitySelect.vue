@@ -22,11 +22,11 @@ function edit() {
 </script>
 
 <template>
-  <div v-if="isEdited">
+  <div v-show="isEdited">
     <input />
     <Button @click="select()">Сохранить</Button>
   </div>
-  <Button v-else @click="edit()">
+  <Button v-show="!isEdited" @click="edit()">
     <IconLocation />
     Изменить город
   </Button>
