@@ -8,6 +8,12 @@ let data = ref({
   humidity: 90,
 });
 
+const arr = ref(["Anton", "Vasia", "Marina"]);
+const obj = ref({
+  name: "Anton",
+  age: 18,
+});
+
 const dataModified = computed(() => {
   return {
     label: "Влажность",
@@ -23,6 +29,14 @@ async function getCity(city) {
 
 <template>
   <main class="main">
+    <ul>
+      <li v-for="(item, index) in arr" :key="item">{{ index }}: {{ item }}</li>
+    </ul>
+    <ul>
+      <li v-for="(value, key, index) in obj" :key="key">
+        {{ index }}: {{ value }}, {{ key }}
+      </li>
+    </ul>
     <div id="city">{{ savedCity }}</div>
     <Stat v-bind="dataModified" />
     <Stat label="Осадки" stat="0%" />
