@@ -10,6 +10,7 @@ const emit = defineEmits({
   },
 });
 
+let city = ref("Moscow");
 let isEdited = ref(false);
 
 function select() {
@@ -20,12 +21,21 @@ function select() {
 function edit() {
   isEdited.value = true;
 }
+
+function updateCity(newCity) {
+  city.value = newCity;
+}
 </script>
 
 <template>
   <div class="city-select">
+    {{ city }}
     <div v-show="isEdited" class="city-input">
-      <Input placeholder="Введите город" />
+      <Input
+        placeholder="Введите город"
+        :value="city"
+        @update:value="updateCity"
+      />
       <Button @click="select()">Сохранить</Button>
     </div>
     <Button v-show="!isEdited" @click="edit()">
