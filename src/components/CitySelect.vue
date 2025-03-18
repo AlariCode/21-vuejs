@@ -26,11 +26,11 @@ function edit() {
 <template>
   <div class="city-select">
     {{ city }}
-    <div v-show="isEdited" class="city-input">
+    <div v-if="isEdited" class="city-input">
       <Input v-model="city" placeholder="Введите город" />
       <Button @click="select()">Сохранить</Button>
     </div>
-    <Button v-show="!isEdited" @click="edit()">
+    <Button v-if="!isEdited" @click="edit()">
       <IconLocation />
       Изменить город
     </Button>
