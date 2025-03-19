@@ -10,7 +10,7 @@ const emit = defineEmits({
   },
 });
 
-let city = ref("Moscow");
+let city = ref("Moscowd");
 let isEdited = ref(false);
 
 onMounted(() => {
@@ -29,7 +29,6 @@ function edit() {
 
 <template>
   <div class="city-select">
-    {{ city }}
     <div v-if="isEdited" class="city-input">
       <Input
         v-model="city"
