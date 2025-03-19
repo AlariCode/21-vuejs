@@ -1,19 +1,5 @@
 <script setup>
-import { onMounted, onUnmounted, onUpdated } from "vue";
-
 const data = defineModel({ type: String, required: true });
-
-onMounted(() => {
-  console.log("Input mounted");
-});
-
-onUpdated(() => {
-  console.log("Input updated");
-});
-
-onUnmounted(() => {
-  console.log("Input unmounted");
-});
 </script>
 
 <template>

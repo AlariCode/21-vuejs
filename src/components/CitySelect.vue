@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue";
+import { onMounted, ref } from "vue";
 import IconLocation from "../icons/IconLocation.vue";
 import Button from "./Button.vue";
 import Input from "./Input.vue";
@@ -13,9 +13,13 @@ const emit = defineEmits({
 let city = ref("Moscow");
 let isEdited = ref(false);
 
+onMounted(() => {
+  emit("selectCity", city.value);
+});
+
 function select() {
   isEdited.value = false;
-  emit("selectCity", "London");
+  emit("selectCity", city.value);
 }
 
 function edit() {
