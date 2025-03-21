@@ -3,9 +3,7 @@ import { computed, ref } from "vue";
 import CitySelect from "./components/CitySelect.vue";
 import Stat from "./components/Stat.vue";
 import Error from "./components/Error.vue";
-import IconSun from "./icons/weather/IconSun.vue";
-import IconRain from "./icons/weather/IconRain.vue";
-import IconCloud from "./icons/weather/IconCloud.vue";
+import DayCard from "./components/DayCard.vue";
 
 const API_ENDPOINT = "https://api.weatherapi.com/v1";
 
@@ -59,9 +57,7 @@ async function getCity(city) {
 <template>
   <main class="main">
     <Error :error="errorDisplay" />
-    <IconSun />
-    <IconRain />
-    <IconCloud />
+    <DayCard weather-code="1000" temp="30" :date="new Date()" />
     <Stat v-for="item in dataModified" v-bind="item" :key="item.label" />
     <CitySelect @select-city="getCity" />
   </main>
