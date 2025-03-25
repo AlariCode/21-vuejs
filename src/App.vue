@@ -54,32 +54,48 @@ async function getCity(city) {
 
 <template>
   <main class="main">
-    <Error :error="errorDisplay" />
-    <div v-if="data" class="stat-data">
-      <div class="stat-list">
-        <Stat v-for="item in dataModified" v-bind="item" :key="item.label" />
+    <div class="left"></div>
+    <div class="right">
+      <Error :error="errorDisplay" />
+      <div v-if="data" class="stat-data">
+        <div class="stat-list">
+          <Stat v-for="item in dataModified" v-bind="item" :key="item.label" />
+        </div>
+        <div class="day-card-list">
+          <DayCard
+            v-for="(item, i) in data.forecast.forecastday"
+            :key="item.date"
+            :weather-code="item.day.condition.code"
+            :temp="item.day.avgtemp_c"
+            :date="new Date(item.date)"
+            :is-active="activeIndex == i"
+            @click="() => (activeIndex = i)"
+          />
+        </div>
       </div>
-      <div class="day-card-list">
-        <DayCard
-          v-for="(item, i) in data.forecast.forecastday"
-          :key="item.date"
-          :weather-code="item.day.condition.code"
-          :temp="item.day.avgtemp_c"
-          :date="new Date(item.date)"
-          :is-active="activeIndex == i"
-          @click="() => (activeIndex = i)"
-        />
-      </div>
+      <CitySelect @select-city="getCity" />
     </div>
-    <CitySelect @select-city="getCity" />
   </main>
 </template>
 
 <style scoped>
 .main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.right {
   background: var(--color-bg-main);
   padding: 60px 50px;
-  border-radius: 25px;
+  border-radius: 0 25px 25px 0;
+}
+.left {
+  width: 500px;
+  height: 680px;
+  border-radius: 30px;
+  background-image: url("/public/bg.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .day-card-list {
   display: flex;
