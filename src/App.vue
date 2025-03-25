@@ -11,6 +11,7 @@ const errorMap = new Map([[1006, "Указанный город не найде�
 
 let data = ref();
 let error = ref();
+let activeIndex = ref(0);
 
 const errorDisplay = computed(() => {
   return errorMap.get(error.value?.error?.code);
@@ -60,11 +61,13 @@ async function getCity(city) {
       </div>
       <div class="day-card-list">
         <DayCard
-          v-for="item in data.forecast.forecastday"
+          v-for="(item, i) in data.forecast.forecastday"
           :key="item.date"
           :weather-code="item.day.condition.code"
           :temp="item.day.avgtemp_c"
           :date="new Date(item.date)"
+          :is-active="activeIndex == i"
+          @click="() => (activeIndex = i)"
         />
       </div>
     </div>
