@@ -13,8 +13,6 @@ const { error, data, activeIndex } = defineProps({
 
 const emit = defineEmits(["select-index", "select-city"]);
 
-const errorMap = new Map([[1006, "Указанный город не найден"]]);
-
 const statData = computed(() => {
   if (!data) {
     return [];
@@ -36,7 +34,7 @@ const statData = computed(() => {
 });
 
 const errorDisplay = computed(() => {
-  return errorMap.get(error?.error?.code);
+  return error.get(error?.error?.code);
 });
 </script>
 
