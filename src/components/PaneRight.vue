@@ -20,15 +20,16 @@ const statData = computed(() => {
   return [
     {
       label: "Влажность",
-      stat: data.current.humidity + " %",
+      stat: data.forecast.forecastday[activeIndex].day.avghumidity + " %",
     },
     {
-      label: "Облачность",
-      stat: data.current.cloud + " %",
+      label: "Вероятность дождя",
+      stat:
+        data.forecast.forecastday[activeIndex].day.daily_chance_of_rain + " %",
     },
     {
       label: "Ветер",
-      stat: data.current.wind_kph + " км/ч",
+      stat: data.forecast.forecastday[activeIndex].day.maxwind_kph + " км/ч",
     },
   ];
 });
